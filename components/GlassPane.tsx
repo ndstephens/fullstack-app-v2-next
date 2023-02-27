@@ -11,7 +11,7 @@ export default function GlassPane({
         className
       )}
     >
-      {children}!!
+      {children}
     </div>
   );
 }
