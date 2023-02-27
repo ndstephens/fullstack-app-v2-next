@@ -6,10 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:eslint": "eslint . --ext js,jsx,ts,tsx,md,mdx --ignore-path .gitignore --fix",
+    "format": "prettier . --ignore-path .gitignore -wu"
+  },
+  "prettier": {
+    "singleQuote": true
   },
   "dependencies": {
-    "@next/font": "^13.2.1",
     "@prisma/client": "^4.10.1",
     "@types/node": "18.14.2",
     "@types/react": "18.0.28",
@@ -34,7 +38,12 @@
     "@types/cookie": "^0.5.1",
     "@types/react-modal": "^3.13.1",
     "autoprefixer": "^10.4.13",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint-plugin-tailwindcss": "^3.10.0",
     "postcss": "^8.4.21",
+    "prettier": "^2.8.4",
+    "prettier-plugin-tailwindcss": "^0.2.3",
     "prisma": "^4.10.1",
     "tailwindcss": "^3.2.7",
     "ts-node": "^10.9.1",
