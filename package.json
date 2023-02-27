@@ -8,7 +8,10 @@
     "start": "next start",
     "lint": "next lint",
     "lint:eslint": "eslint . --ext js,jsx,ts,tsx,md,mdx --ignore-path .gitignore --fix",
-    "format": "prettier . --ignore-path .gitignore -wu"
+    "format": "prettier . --ignore-path .gitignore -wu",
+    "migrate": "prisma migrate dev",
+    "seed": "prisma db seed",
+    "studio": "prisma studio"
   },
   "prisma": {
     "seed": "ts-node -P tsconfig-seed.json -r tsconfig-paths/register --transpileOnly prisma/seed.ts"
