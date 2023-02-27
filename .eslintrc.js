@@ -29,7 +29,14 @@ module.exports = {
           // Side effect imports
           ['^\\u0000'],
           //* Path aliased
-          ['^@api', '@assets', '@config', '@hooks', '@ui', '@utils'],
+          [
+            '@/assets',
+            '@/components',
+            '@/hooks',
+            '@/lib',
+            '@/prisma',
+            '@/styles',
+          ],
           // Absolute imports
           ['^(src|public)(/.*|$)'],
           // Parent imports. Put `..` last
