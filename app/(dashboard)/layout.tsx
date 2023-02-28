@@ -1,4 +1,5 @@
 import GlassPane from '@/components/GlassPane';
+import Sidebar from '@/components/Sidebar';
 
 export default function DashboardRootLayout({
   children,
@@ -6,7 +7,7 @@ export default function DashboardRootLayout({
   return (
     <div className="candy-mesh isolate h-full p-6">
       <GlassPane className="flex h-full items-center">
-        {/* <Sidebar /> */}
+        <Sidebar />
         {children}
       </GlassPane>
       <div id="modal" />
