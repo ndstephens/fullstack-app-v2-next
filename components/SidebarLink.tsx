@@ -6,12 +6,12 @@ import { usePathname } from 'next/navigation';
 
 import clsx from 'clsx';
 
-import { SidebarLink } from '@/lib/sidebarLinks';
+import { SidebarLinkType } from '@/lib/sidebarLinks';
 
 const icons = { Calendar, Grid, Settings, User };
 
 type SidebarLinkProps = {
-  link: SidebarLink;
+  link: SidebarLinkType;
 };
 
 export default function SidebarLink({ link }: SidebarLinkProps) {
@@ -24,8 +24,8 @@ export default function SidebarLink({ link }: SidebarLinkProps) {
       <Icon
         size={40}
         className={clsx(
-          'stroke-gray-400 transition duration-200 hover:stroke-violet-600',
-          isActive && 'stroke-violet-600'
+          'text-gray-400 transition duration-200 hover:text-violet-600',
+          isActive && 'text-violet-600'
         )}
       />
     </Link>

@@ -21,4 +21,4 @@ export const sidebarLinks = [
   },
 ] as const;
 
-export type SidebarLink = (typeof sidebarLinks)[number];
+export type SidebarLinkType = (typeof sidebarLinks)[number];

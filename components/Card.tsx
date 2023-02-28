@@ -7,7 +7,7 @@ export default function Card({
   return (
     <div
       className={clsx(
-        'rounded-3xl bg-white px-10 py-4 drop-shadow-xl',
+        'rounded-2xl bg-white px-10 py-4 drop-shadow-xl',
         className
       )}
     >
