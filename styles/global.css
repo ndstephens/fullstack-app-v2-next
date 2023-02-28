@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  *:focus {
+    @apply outline-none;
+  }
+  *:focus-visible {
+    @apply outline-2 outline-offset-2;
+  }
+
+  :where(html, body) {
+    @apply min-h-full;
+  }
+
+  :where(body) {
+    @apply isolate;
+  }
+
+  :where(button, nav *) {
+    @apply select-none;
+  }
+}
