@@ -7,7 +7,7 @@ export default function GlassPane({
   return (
     <div
       className={clsx(
-        'rounded-2xl border-2 border-gray-200 p-6 backdrop-blur-md backdrop-saturate-150',
+        'rounded-2xl border-2 border-gray-200 bg-white/40 p-6 backdrop-blur-lg backdrop-saturate-150',
         className
       )}
     >
