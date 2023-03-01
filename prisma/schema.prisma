@@ -19,8 +19,8 @@ model User {
 
   email     String    @unique
   password  String
-  firstName String?
-  lastName  String?
+  firstName String
+  lastName  String
   projects  Project[]
   tasks     Task[]
 }
@@ -60,7 +60,7 @@ model Task {
   project   Project @relation(fields: [projectId], references: [id])
 
   name        String
-  description String
+  description String?
   status      TASK_STATUS @default(NOT_STARTED)
   due         DateTime?
   deleted     Boolean     @default(false)
