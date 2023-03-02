@@ -107,7 +107,7 @@ export default function AuthForm({ mode }: { mode: 'register' | 'signin' }) {
               setFormState((s) => ({ ...s, password: e.target.value }))
             }
           />
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between gap-x-12">
             <Link href={content.linkUrl} className="font-bold text-blue-600">
               {content.linkText}
             </Link>
