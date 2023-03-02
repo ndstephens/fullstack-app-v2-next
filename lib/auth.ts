@@ -40,7 +40,6 @@ export const createJWT = (user: JWTPayload) => {
 //*==============================================
 const validateJWT = async (jwt: string) => {
   const { payload } = await jwtVerify(jwt, secret);
-
   return payload.payload as JWTPayload;
 };
 
@@ -50,14 +49,11 @@ const validateJWT = async (jwt: string) => {
 // TODO: need to type "cookies"
 export const getUserFromCookie = async (cookies) => {
   const jwt = cookies.get(process.env.COOKIE_NAME);
-
   const { id } = await validateJWT(jwt.value);
-
   const user = await db.user.findUnique({
     where: {
       id,
     },
   });
-
   return user;
 };
