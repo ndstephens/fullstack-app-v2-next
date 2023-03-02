@@ -53,7 +53,7 @@ export const register = (user: {
     url: '/api/register',
     method: 'POST',
     body: user,
-    // json: false,
+    json: false,
   });
 };
 
@@ -65,7 +65,7 @@ export const signin = (user: { email: string; password: string }) => {
     url: '/api/signin',
     method: 'POST',
     body: user,
-    // json: false,
+    json: false,
   });
 };
 
