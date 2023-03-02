@@ -37,7 +37,6 @@ export default function AuthForm({ mode }: { mode: 'register' | 'signin' }) {
     try {
       if (mode === 'register') {
         await register(formState);
-        console.log('yolo');
       } else {
         await signin(formState);
       }
@@ -65,22 +64,30 @@ export default function AuthForm({ mode }: { mode: 'register' | 'signin' }) {
                 label="First Name"
                 id="firstName"
                 required
+                maxLength={48}
                 type="text"
                 placeholder="Jane"
                 value={formState.firstName}
                 onChange={(e) =>
-                  setFormState((s) => ({ ...s, firstName: e.target.value }))
+                  setFormState((s) => ({
+                    ...s,
+                    firstName: e.target.value.trim(),
+                  }))
                 }
               />
               <InputWithLabel
                 label="Last Name"
                 id="lastName"
                 required
+                maxLength={48}
                 type="text"
                 placeholder="Doe"
                 value={formState.lastName}
                 onChange={(e) =>
-                  setFormState((s) => ({ ...s, lastName: e.target.value }))
+                  setFormState((s) => ({
+                    ...s,
+                    lastName: e.target.value.trim(),
+                  }))
                 }
               />
             </div>
@@ -93,18 +100,20 @@ export default function AuthForm({ mode }: { mode: 'register' | 'signin' }) {
             placeholder="jane@email.com"
             value={formState.email}
             onChange={(e) =>
-              setFormState((s) => ({ ...s, email: e.target.value }))
+              setFormState((s) => ({ ...s, email: e.target.value.trim() }))
             }
           />
           <InputWithLabel
             label="Password"
             id="password"
             required
+            minLength={8}
+            maxLength={32}
             type="password"
             placeholder="********"
             value={formState.password}
             onChange={(e) =>
-              setFormState((s) => ({ ...s, password: e.target.value }))
+              setFormState((s) => ({ ...s, password: e.target.value.trim() }))
             }
           />
           <div className="flex items-center justify-between gap-x-12">
