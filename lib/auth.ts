@@ -49,7 +49,6 @@ const validateJWT = async (jwt: string) => {
 //* =============================================
 //*          GET USER FROM JWT/COOKIE           =
 //*==============================================
-// TODO: need to type "cookies"
 export const getUserFromCookie = async (
   cookies: RequestCookies | ReadonlyRequestCookies
 ) => {
