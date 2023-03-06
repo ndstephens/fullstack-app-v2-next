@@ -2,7 +2,9 @@ import { Suspense } from 'react';
 
 import Greeting from '@/components/Greeting';
 import GreetingsSkeleton from '@/components/GreetingSkeleton';
+import Loader from '@/components/Loader';
 import ProjectCards from '@/components/ProjectCards';
+import TasksCard from '@/components/TasksCard';
 
 export default async function HomePage() {
   return (
@@ -10,13 +12,13 @@ export default async function HomePage() {
       <Suspense fallback={<GreetingsSkeleton />}>
         <Greeting />
       </Suspense>
-      <Suspense fallback={null}>
+      <Suspense fallback={<Loader className="min-h-[216px]" />}>
         <ProjectCards />
       </Suspense>
       <div className="w-1/3 p-3">{/* new project here */}</div>
-      <div className="mt-6 flex flex-1">
-        <div className="w-full">{/* tasks here */}</div>
-      </div>
+      <Suspense fallback={<Loader className="min-h-[216px]" />}>
+        <TasksCard title="Your Primary Tasks" />
+      </Suspense>
     </div>
   );
 }
