@@ -1,12 +1,8 @@
 import { Suspense } from 'react';
-import { cookies } from 'next/headers';
-import Link from 'next/link';
 
 import Greeting from '@/components/Greeting';
 import GreetingsSkeleton from '@/components/GreetingSkeleton';
-import { getUserFromCookie } from '@/lib/auth';
-import { db } from '@/lib/db';
-import { delay } from '@/lib/delay';
+import ProjectCards from '@/components/ProjectCards';
 
 export default async function HomePage() {
   return (
@@ -14,10 +10,8 @@ export default async function HomePage() {
       <Suspense fallback={<GreetingsSkeleton />}>
         <Greeting />
       </Suspense>
-      <div className="-m-3 mt-3 flex flex-1 flex-wrap items-center ">
-        {/** projects map here */}
-        <div className="w-1/3 p-3">{/* new project here */}</div>
-      </div>
+      <ProjectCards />
+      <div className="w-1/3 p-3">{/* new project here */}</div>
       <div className="mt-6 flex flex-1">
         <div className="w-full">{/* tasks here */}</div>
       </div>
