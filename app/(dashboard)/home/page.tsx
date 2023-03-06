@@ -10,7 +10,9 @@ export default async function HomePage() {
       <Suspense fallback={<GreetingsSkeleton />}>
         <Greeting />
       </Suspense>
-      <ProjectCards />
+      <Suspense fallback={null}>
+        <ProjectCards />
+      </Suspense>
       <div className="w-1/3 p-3">{/* new project here */}</div>
       <div className="mt-6 flex flex-1">
         <div className="w-full">{/* tasks here */}</div>
