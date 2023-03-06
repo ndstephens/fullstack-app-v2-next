@@ -41,7 +41,7 @@ export default function AuthForm({ mode }: { mode: 'register' | 'signin' }) {
         await signin(formState);
       }
       // TODO: do i need to reset the form if i'm changing routes ?
-      // setFormState({...initialState})
+      setFormState({ ...initialState });
       router.replace('/home');
     } catch (error) {
       console.error(error);
