@@ -58,7 +58,7 @@ export const register = (user: {
 };
 
 //* =============================================
-//*                 SIGN-IN                      =
+//*                 SIGN-IN                     =
 //*==============================================
 export const signin = (user: { email: string; password: string }) => {
   return fetcher({

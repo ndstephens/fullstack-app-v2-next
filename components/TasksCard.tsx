@@ -25,7 +25,6 @@ const getData = async () => {
       due: 'asc',
     },
   });
-
   return tasks;
 };
 
