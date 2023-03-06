@@ -1,3 +1,6 @@
+import { RequestCookies } from 'next/dist/compiled/@edge-runtime/cookies';
+import { ReadonlyRequestCookies } from 'next/dist/server/app-render';
+
 import bcrypt from 'bcrypt';
 import { jwtVerify, SignJWT } from 'jose';
 
@@ -47,8 +50,13 @@ const validateJWT = async (jwt: string) => {
 //*          GET USER FROM JWT/COOKIE           =
 //*==============================================
 // TODO: need to type "cookies"
-export const getUserFromCookie = async (cookies) => {
-  const jwt = cookies.get(process.env.COOKIE_NAME);
+export const getUserFromCookie = async (
+  cookies: RequestCookies | ReadonlyRequestCookies
+) => {
+  const jwt = cookies.get(process.env.COOKIE_NAME!);
+  if (!jwt) {
+    return undefined;
+  }
   const { id } = await validateJWT(jwt.value);
   const user = await db.user.findUnique({
     where: {
