@@ -15,7 +15,6 @@ export default async function HomePage() {
       <Suspense fallback={<Loader className="min-h-[216px]" />}>
         <ProjectCards />
       </Suspense>
-      <div className="w-1/3 p-3">{/* new project here */}</div>
       <Suspense fallback={<Loader className="min-h-[216px]" />}>
         <TasksCard title="Your Primary Tasks" />
       </Suspense>
