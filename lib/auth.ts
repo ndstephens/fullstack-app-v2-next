@@ -41,7 +41,7 @@ export const createJWT = (user: JWTPayload) => {
 //* =============================================
 //*               VALIDATE JWT                  =
 //*==============================================
-const validateJWT = async (jwt: string) => {
+export const validateJWT = async (jwt: string) => {
   const { payload } = await jwtVerify(jwt, secret);
   return payload.payload as JWTPayload;
 };
