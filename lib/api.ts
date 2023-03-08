@@ -72,3 +72,11 @@ export const signin = (user: { email: string; password: string }) => {
 //* =============================================
 //*              CREATE PROJECT                 =
 //*==============================================
+export const createNewProject = async (name: string) => {
+  return fetcher({
+    url: '/api/project',
+    method: 'POST',
+    body: { name },
+    json: false,
+  });
+};

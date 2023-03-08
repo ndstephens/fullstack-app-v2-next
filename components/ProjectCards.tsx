@@ -1,6 +1,7 @@
 import { cookies } from 'next/headers';
 import Link from 'next/link';
 
+import NewProject from '@/components/NewProject';
 import ProjectCard from '@/components/ProjectCard';
 import { getUserFromCookie } from '@/lib/auth';
 import { db } from '@/lib/db';
@@ -30,6 +31,7 @@ export default async function ProjectCards() {
           <ProjectCard project={project} />
         </Link>
       ))}
+      <NewProject />
     </div>
   );
 }
