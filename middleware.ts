@@ -27,6 +27,11 @@ export default async function middleware(req: NextRequest) {
     return NextResponse.next();
   }
 
+  if (pathname === '/') {
+    req.nextUrl.pathname = '/home';
+    return NextResponse.redirect(req.nextUrl);
+  }
+
   const jwt = req.cookies.get(process.env.COOKIE_NAME!);
 
   if (!jwt) {
